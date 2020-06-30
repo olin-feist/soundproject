@@ -12,7 +12,7 @@ using namespace std;
 using namespace std::chrono;
 
 ifstream file;
-int interval=10;
+int interval;
 
 class row{
     public:
@@ -123,7 +123,17 @@ void parsefile(){
         cout<<"File Loaded..."<<endl;
         cout<<"Running..."<<endl;
     }
+
+
+    //userinput time interval
+    cout << "Time interval to parse: ";
+    int tempinter;
+    cin >> tempinter; // get user input for interval
+    interval=tempinter;
+    cout<<endl;
     
+
+
     //object to hold row data
     row* temp;
 
@@ -181,7 +191,7 @@ void parsefile(){
  
     }
 
-    cout<<"Parsed by 5 min intervals"<<endl;
+    cout<<"Parsed by "<< interval <<" min intervals"<<endl;
 
     //sort table by mmsi
     sort(table.begin(), table.end(), [](const row& lhs, const row& rhs) {
