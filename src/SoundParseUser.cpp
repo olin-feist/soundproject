@@ -11,9 +11,13 @@
 using namespace std;
 using namespace std::chrono;
 
+//global variables
 ifstream file;
 int interval;
+int variance;
 
+
+//row class
 class row{
     public:
     int mmsi;
@@ -83,6 +87,7 @@ bool comparetime(const row& r1, const row& r2){
     return false; 
 }
 
+//determine if number is close to given interval
 bool findclose(int a){
     int temp=0;
     while(temp<=a+1){
@@ -127,11 +132,10 @@ void parsefile(){
 
 
     //userinput time interval
-    cout << "Time interval to parse: ";
-    int tempinter;
-    cin >> tempinter; // get user input for interval
-    interval=tempinter;
-    cout<<endl;
+    cout << "Time interval to parse (min): ";
+    cin >> interval; // get user input for interval
+    cout << "How close to time interval (seconds<=60): ";
+    cin>>variance; // get variance for interval
     
 
 
@@ -177,11 +181,12 @@ void parsefile(){
             
             //5 min interval
             if(tempint%interval==0){
-               
-                temp=new row(stoi(v[0]),v[1],stof(v[2]),stof(v[3]),stof(v[4]),stof(v[5]),stoi(v[6]),v[7],v[8],v[9],v[10],v[11],v[12],v[13],v[14],v[15]);
-                table.push_back(*temp);
+               if(tempint2<=variance){
+                    temp=new row(stoi(v[0]),v[1],stof(v[2]),stof(v[3]),stof(v[4]),stof(v[5]),stoi(v[6]),v[7],v[8],v[9],v[10],v[11],v[12],v[13],v[14],v[15]);
+                    table.push_back(*temp);
+               }
             }else if(findclose(tempint)){
-                if(tempint2>=57){
+                if(tempint2>=variance-60){
                     temp=new row(stoi(v[0]),v[1],stof(v[2]),stof(v[3]),stof(v[4]),stof(v[5]),stoi(v[6]),v[7],v[8],v[9],v[10],v[11],v[12],v[13],v[14],v[15]);
                     table.push_back(*temp);
                     
@@ -259,8 +264,8 @@ void parsefile(){
    auto duration = duration_cast<seconds>(stop - start); 
    float time=duration.count()/60;
     cout<<"Done."<<endl;
-    cout<<setprecision(2)<<"Elapsed Time: "<<duration.count()/60<<"."<<duration.count()%60<<" minutes" << endl;
-    
+    cout<<setprecision(2)<<"Elapsed Time: "<<(duration.count()-(duration.count()%60))/60<<":"<<duration.count()%60<<" minutes:seconds" << endl;
+    cout<<"number of records: "<<table.size()-1<<endl;
 
 
     
