@@ -85,8 +85,9 @@ bool comparetime(const row& r1, const row& r2){
 
 bool findclose(int a){
     int temp=0;
-    while(temp<a){
-        if(a-temp==1){
+    while(temp<=a+1){
+        if(a-temp==-1){
+           
             return true;
         }else{
             temp+=interval;
@@ -172,7 +173,7 @@ void parsefile(){
 
 
         //filter by type
-        if((v[11].compare("at anchor"))==1&&(v[11].compare("moored"))==1&&(v[11].compare("aground"))==1){
+        if(v[11]!=("at anchor")&&(v[11]!=("moored"))&&(v[11]!=("aground"))){
             
             //5 min interval
             if(tempint%interval==0){
