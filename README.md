@@ -1,5 +1,5 @@
 # soundproject
-Code to parse csv file by specific time intervals, drag and drop file into terminal or type file path then specify time interval to parse by.
+Code to parse csv file by specific time intervals, drag and drop file into terminal or type file path then specify time interval to parse by. Outputs CSV sorted by boat ID and time.
 
 <b>To compile:</b>
 
