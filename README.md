@@ -34,6 +34,7 @@ Code to parse csv file by specific time intervals, drag and drop file into termi
 + Writes to CSV file sorted by boat and time
 
 ## Runtime/Output
+###### Run on 2017_01_zone10, 30 million records
 
 | Interval (min)|Variance(sec)| #of records   |
 | ------------- |-------------|:-------------:| 
@@ -46,6 +47,6 @@ Code to parse csv file by specific time intervals, drag and drop file into termi
 
 | Interval (min)|Variance(sec)|Runtime (min,sec)|
 | ------------- |-------------|:-------------:  |  
-| 5             |5            |3 47             |
-| 10            |5            |2 23             | 
-| 15            |5            |1 54             |
+| 5             |5            |3:47             |
+| 10            |5            |2:23             | 
+| 15            |5            |1:54             |
