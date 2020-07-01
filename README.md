@@ -3,4 +3,4 @@ Code to parse csv file by specific time intervals, drag and drop file into termi
 
 <b>To compile:</b>
 
-g++ -O2 SoundParseUser.cpp -o SoundParseUser
+g++ -O2 -std=c++17 SoundParseUser.cpp -o SoundParseUser
