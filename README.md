@@ -7,6 +7,9 @@ Code to parse csv file by specific time intervals, drag and drop file into termi
 ## Compiling
 
 #### To compile:
+##### Windows
++ For windows click shortcut or run executable
+##### Mac
 + Navigate to file directory in terminal and enter the src file(/..../soundproject/src/)
 
 + Then type:
