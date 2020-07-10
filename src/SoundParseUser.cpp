@@ -189,7 +189,7 @@ void parsefile(){
                     table.push_back(*temp);
                }
             }else if(findclose(tempint)){
-                if(tempint2>=variance-60){
+                if(tempint2>=variance){
                     temp=new row(stoi(v[0]),v[1],stof(v[2]),stof(v[3]),stof(v[4]),stof(v[5]),stoi(v[6]),v[7],v[8],v[9],v[10],v[11],v[12],v[13],v[14],v[15]);
                     table.push_back(*temp);
                     
