@@ -3,10 +3,10 @@
 This Repostitory contains c++ code that is desighned to run in R and run on its own.
 
 ### Table of Contents:
-* [R packages](#R-packages)
-   * [ParseCSV](#ParseCSV)
-* [C++ Scripts](#C++-Scripts)
-   * [SoundParseUser](#SoundParseUser)
+* <b>[R packages](#R-packages)</b>
+   * <b>[ParseCSV](#ParseCSV)</b>
+* <b>[C++ Scripts](#C++-Scripts)</b>
+   * <b>[SoundParseUser](#SoundParseUser)</b>
 
 ---
 # R packages
