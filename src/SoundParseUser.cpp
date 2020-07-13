@@ -151,7 +151,7 @@ void parsefile(){
     
     //auto start = high_resolution_clock::now(); 
     auto start = high_resolution_clock::now(); 
-
+  
     //loop through csv file
     while (getline(file, line)){
    
@@ -189,7 +189,7 @@ void parsefile(){
                     table.push_back(*temp);
                }
             }else if(findclose(tempint)){
-                if(tempint2>=variance-60){
+                if(tempint2>=60-variance){
                     temp=new row(stoi(v[0]),v[1],stof(v[2]),stof(v[3]),stof(v[4]),stof(v[5]),stoi(v[6]),v[7],v[8],v[9],v[10],v[11],v[12],v[13],v[14],v[15]);
                     table.push_back(*temp);
                     
@@ -197,11 +197,12 @@ void parsefile(){
 
             }
         }
+        
  
     }
 
     cout<<"Parsed by "<< interval <<" min intervals"<<endl;
-
+    cout<<typecount<<endl;
     //sort table by mmsi
     sort(table.begin(), table.end(), [](const row& lhs, const row& rhs) {
       return lhs.mmsi < rhs.mmsi;
