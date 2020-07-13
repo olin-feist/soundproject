@@ -1,4 +1,7 @@
 # soundproject
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png" alt="drawing" width="50"/> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1280px-R_logo.svg.png" alt="drawing" width="50"/>
+
 ## Description:
 This Repostitory contains c++ code that is desighned to run in R and run on its own.
 
@@ -41,7 +44,6 @@ Code to parse csv file by specific time intervals, drag and drop file into termi
 
 ### Compiling
 
-#### To compile:
 ##### Windows
 + For windows click shortcut or run executable
 ##### Mac
