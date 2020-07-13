@@ -1,5 +1,40 @@
 # soundproject
-## SoundParseUser.cpp
+## Description:
+This Repostitory contains c++ code that is desighned to run in R and run on its own.
+
+### Table of Contents:
+* [R packages](#R-packages)
+   * [ParseCSV](#ParseCSV)
+* [C++ Scripts](#C++-Scripts)
+   * [SoundParseUser](#SoundParseUser)
+
+---
+# R packages
+#### C++ packages linked to R through Rcpp library
+
+## ParseCSV
+### Description:
+Creates a method in R that parses CSV file by time interval and variance
+
+### To Use:
+1. add Rcpp library
+2. use sourceCpp and include file path to "ParseCSV.cpp"
+3. then you can call the cpp method parsefile() by passing the CSV filepath the time interval to parse and 
+the variance (How many seconds off an entry can be from a given interval)
+
+``` R
+library(Rcpp)
+sourceCpp("/.../parseCsv.cpp")
+parsefile([filepath],[interval],[variance])
+```
+
+
+---
+
+# C++ Scripts
+
+#### Standalone C++ code that is not currently compatible with R but will preform tasks much faster
+## SoundParseUser
 ### Description
 
 Code to parse csv file by specific time intervals, drag and drop file into terminal or type file path then specify time interval to parse by. Outputs CSV sorted by boat ID and time.
