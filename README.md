@@ -1,10 +1,10 @@
 # soundproject
-
-## Description
+## SoundParseUser.cpp
+### Description
 
 Code to parse csv file by specific time intervals, drag and drop file into terminal or type file path then specify time interval to parse by. Outputs CSV sorted by boat ID and time.
 
-## Compiling
+### Compiling
 
 #### To compile:
 ##### Windows
@@ -25,7 +25,7 @@ Code to parse csv file by specific time intervals, drag and drop file into termi
 + Changing the -O2 flag to -O3 will increase speed but will require much more memory
 + The -std=c++17 flag is only need on Mac and certain g++ compiler version
 
-# Running
+### Running
 
 #### User Input:
 + Interval: the interval the code will parse by
