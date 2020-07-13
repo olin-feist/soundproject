@@ -15,6 +15,8 @@ Code to parse csv file by specific time intervals, drag and drop file into termi
 + Then type:
 
 <b>g++ -O2 -std=c++17 SoundParseUser.cpp -o SoundParseUser</b>
+###### On certain mac compilers(xcode 9.2) you must use these compiler options:
+   ###### g++ -O2 -std=c++1z SoundParseUser.cpp -o SoundParseUser
 
 + then run the executable 
 
