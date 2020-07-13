@@ -5,7 +5,7 @@ This Repostitory contains c++ code that is desighned to run in R and run on its 
 ### Table of Contents:
 * <b>[R packages](#R-packages)</b>
    * <b>[ParseCSV](#ParseCSV)</b>
-* <b>[C++ Scripts](#C++-Scripts)</b>
+* <b>[C++ Scripts](#Cpp-Scripts)</b>
    * <b>[SoundParseUser](#SoundParseUser)</b>
 
 ---
@@ -31,7 +31,7 @@ parsefile([filepath],[interval],[variance])
 
 ---
 
-# C++ Scripts
+# Cpp Scripts
 
 #### Standalone C++ code that is not currently compatible with R but will preform tasks much faster
 ## SoundParseUser
