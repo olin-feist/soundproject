@@ -39,19 +39,19 @@ Code to parse csv file by specific time intervals, drag and drop file into termi
 + Writes to CSV file sorted by boat and time
 
 ## Runtime/Output
-###### Run on 2017_01_zone10, 30 million records
+###### Run on 2017_01_zone10, 32 million records
 
 | Interval (min)|Variance(sec)| #of records   |
 | ------------- |-------------|:-------------:| 
-| 5             |5            |5.6 million    |
-| 10            |5            |2.8 million    | 
-| 15            |5            |1.9 million    |
+| 5             |30           |5.5 million    |
+| 10            |30           |2.6 million    | 
+| 15            |30           |1.9 million    |
 
 ##### with -O2 Flag:
 ##### specs: intel i7 8 cores 2.8 ghz, 16gb ram
 
 | Interval (min)|Variance(sec)|Runtime (min,sec)|
 | ------------- |-------------|:-------------:  |  
-| 5             |5            |3:47             |
-| 10            |5            |2:23             | 
-| 15            |5            |1:54             |
+| 5             |30           |3:23             |
+| 10            |30           |2:09             | 
+| 15            |30           |1:45             |
