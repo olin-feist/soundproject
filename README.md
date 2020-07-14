@@ -1,12 +1,49 @@
 # soundproject
 
-## Description
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png" alt="drawing" width="50"/> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1280px-R_logo.svg.png" alt="drawing" width="50"/>
+
+## Description:
+This Repostitory contains c++ code that is desighned to run in R and run on its own.
+
+### Table of Contents:
+* <b>[R packages](#R-packages)</b>
+   * <b>[ParseCSV](#ParseCSV)</b>
+* <b>[C++ Scripts](#Cpp-Scripts)</b>
+   * <b>[SoundParseUser](#SoundParseUser)</b>
+
+---
+# R packages
+#### C++ packages linked to R through Rcpp library
+
+## ParseCSV
+### Description:
+Creates a method in R that parses CSV file by time interval and variance
+
+### To Use:
+1. add Rcpp library
+2. use sourceCpp and include file path to "ParseCSV.cpp"
+3. then you can call the cpp method parsefile() by passing the CSV filepath the time interval to parse and 
+the variance (How many seconds off an entry can be from a given interval)
+
+``` R
+library(Rcpp)
+sourceCpp("/.../parseCsv.cpp")
+parsefile([filepath],[interval],[variance])
+```
+
+
+---
+
+# Cpp Scripts
+
+#### Standalone C++ code that is not currently compatible with R but will preform tasks much faster
+## SoundParseUser
+### Description
 
 Code to parse csv file by specific time intervals, drag and drop file into terminal or type file path then specify time interval to parse by. Outputs CSV sorted by boat ID and time.
 
-## Compiling
+### Compiling
 
-#### To compile:
 ##### Windows
 + For windows click shortcut or run executable
 ##### Mac
@@ -25,7 +62,7 @@ Code to parse csv file by specific time intervals, drag and drop file into termi
 + Changing the -O2 flag to -O3 will increase speed but will require much more memory
 + The -std=c++17 flag is only need on Mac and certain g++ compiler version
 
-# Running
+### Running
 
 #### User Input:
 + Interval: the interval the code will parse by
