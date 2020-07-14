@@ -6,10 +6,9 @@
 #include <vector>
 #include <iomanip>
 #include <Rcpp.h>
-#include <chrono> 
+
 
 using namespace std;
-using namespace std::chrono;
 using namespace Rcpp;
 
 
@@ -118,9 +117,6 @@ void parsefile(string filename,int interval,int variance){
     if(line.empty()){
         cout<<"Error: file not loaded"<<endl;
         return;
-    }else{
-        cout<<"File Loaded..."<<endl;
-        cout<<"Running..."<<endl;
     }
 
 
@@ -137,8 +133,7 @@ void parsefile(string filename,int interval,int variance){
     //vector to hold currentrowval data
     vector<string> v;
     
-    //auto start = high_resolution_clock::now(); 
-    auto start = high_resolution_clock::now(); 
+
 
     //loop through csv file
     while (getline(file, line)){
@@ -188,14 +183,13 @@ void parsefile(string filename,int interval,int variance){
  
     }
 
-    cout<<"Parsed by "<< interval <<" min intervals"<<endl;
 
     //sort csvtable by mmsi
     sort(csvtable.begin(), csvtable.end(), [](const currentrowval& lhs, const currentrowval& rhs) {
       return lhs.mmsi < rhs.mmsi;
     });
 
-    cout<<"sorted by boat id"<<endl;
+  
     //--------------------
 
 
@@ -203,8 +197,8 @@ void parsefile(string filename,int interval,int variance){
     int startindex=0;
     int endindex=0;
     int boatid=csvtable[0].mmsi;
-
-    for(int i=0;i<csvtable.size();i++){
+    
+    for(unsigned int i=0;i<csvtable.size();i++){
         
         if(boatid!=csvtable[i].mmsi||i==csvtable.size()-1){
     
@@ -218,7 +212,7 @@ void parsefile(string filename,int interval,int variance){
             endindex++;
         }
     }
-    cout<<"sorted by time"<<endl;
+
     //-------------------------
 
     //write to csv file ----------
@@ -229,7 +223,7 @@ void parsefile(string filename,int interval,int variance){
     //write headers to file
     file_stream<<headers<<endl;
     //loop through csvtable and write to file
-    for(int i=0;i<csvtable.size();i++){
+    for(unsigned int i=0;i<csvtable.size();i++){
         currentrowval currentcurrentrowval=csvtable[i];
         file_stream<<currentcurrentrowval.mmsi<<",";
         file_stream<<currentcurrentrowval.basedatetime<<",";
@@ -254,13 +248,7 @@ void parsefile(string filename,int interval,int variance){
     file_stream.close();
     //-------------------------
 
-    //get time of run
-   auto stop = high_resolution_clock::now(); 
-   auto duration = duration_cast<seconds>(stop - start); 
-   float time=duration.count()/60;
-    cout<<"Done."<<endl;
-    cout<<setprecision(2)<<"Elapsed Time: "<<(duration.count()-(duration.count()%60))/60<<":"<<duration.count()%60<<" minutes,seconds" << endl;
-    cout<<"number of records: "<<csvtable.size()-1<<endl;
+
 
 
     
